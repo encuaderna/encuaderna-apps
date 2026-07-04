@@ -5,102 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encuaderna Apps - Portal de Acceso</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             min-height: 100vh;
             color: #e0e0e0;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        header { text-align: center; padding: 60px 0 40px; }
         header h1 {
-            font-size: 3rem;
-            color: #e94560;
+            font-size: 3em;
+            color: #ff6b6b;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        header p {
-            font-size: 1.2rem;
-            color: #a0a0a0;
-        }
+        header p { font-size: 1.2em; color: #a0a0b0; }
         .apps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
         .app-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
             border-radius: 16px;
-            padding: 40px 30px;
+            padding: 30px;
             text-align: center;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .app-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            border-color: #e94560;
-            background: rgba(233, 69, 96, 0.08);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255,107,107,0.2);
         }
-        .app-icon {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-        .app-card h2 {
-            font-size: 1.6rem;
-            color: #ffffff;
-            margin-bottom: 12px;
-        }
-        .app-card p {
-            color: #999;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-        .app-card a {
+        .app-icon { font-size: 3em; margin-bottom: 15px; }
+        .app-card h2 { font-size: 1.5em; color: #fff; margin-bottom: 10px; }
+        .app-card p { color: #a0a0b0; margin-bottom: 20px; font-size: 0.95em; line-height: 1.5; }
+        .btn {
             display: inline-block;
-            padding: 14px 32px;
-            background: linear-gradient(135deg, #e94560, #c53650);
+            background: #ff6b6b;
             color: white;
+            padding: 12px 28px;
+            border-radius: 25px;
             text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: background 0.3s;
         }
-        .app-card a:hover {
-            background: linear-gradient(135deg, #ff5a7a, #e94560);
-            box-shadow: 0 6px 20px rgba(233, 69, 96, 0.6);
-            transform: scale(1.05);
-        }
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding: 30px;
-            color: #666;
-            font-size: 0.9rem;
-        }
-        footer a {
-            color: #e94560;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
+        .btn:hover { background: #ff5252; }
+        footer { text-align: center; padding: 40px 0 20px; color: #606080; font-size: 0.9em; }
     </style>
 </head>
 <body>
@@ -110,33 +64,33 @@
             <p>Selecciona una aplicacion para comenzar</p>
         </header>
         <div class="apps-grid">
-            <div class="app-card" onclick="window.location.href='https://encuaderna.github.io/encuaderna/'">
-                <div class="app-icon">&#128214;</div>
+            <div class="app-card">
+                <div class="app-icon">📖</div>
                 <h2>Encuaderna</h2>
-                <p>Gestion y organizacion de encuadernacion. Mantén control de tus proyectos de encuadernacion.</p>
-                <a href="https://encuaderna.github.io/encuaderna/" target="_blank">Abrir Aplicacion</a>
+                <p>Bitacora y registro tecnico para quienes encuadernan artesanalmente. Organiza tus proyectos paso a paso.</p>
+                <a href="https://bind-calm-create.base44.app" target="_blank" class="btn">Abrir Aplicacion</a>
             </div>
-            <div class="app-card" onclick="window.location.href='https://encuaderna.github.io/cajalibro-f-cil/'">
-                <div class="app-icon">&#128202;</div>
+            <div class="app-card">
+                <div class="app-icon">📦</div>
                 <h2>CajaLibro Facil</h2>
                 <p>Calculadora de cajas libro. Dimensiona tus cajas de forma rapida y precisa.</p>
-                <a href="https://encuaderna.github.io/cajalibro-f-cil/" target="_blank">Abrir Aplicacion</a>
+                <a href="https://box-craft-logic.base44.app" target="_blank" class="btn">Abrir Aplicacion</a>
             </div>
-            <div class="app-card" onclick="window.location.href='https://encuaderna.github.io/encuataller/'">
-                <div class="app-icon">&#127962;</div>
+            <div class="app-card">
+                <div class="app-icon">🔧</div>
                 <h2>EncuaTaller</h2>
-                <p>Taller de encuadernacion. Planifica y gestiona tus actividades de taller.</p>
-                <a href="https://encuaderna.github.io/encuataller/" target="_blank">Abrir Aplicacion</a>
+                <p>Taller de encuadernacion. Planifica y gestiona tus herramientas con materiales economicos y paso a paso.</p>
+                <a href="https://bind-build-lab.base44.app" target="_blank" class="btn">Abrir Aplicacion</a>
             </div>
-                        <div class="app-card" onclick="window.location.href='https://encuaderna.github.io/imposimple/'">
-                <div class="app-icon">&#9989;</div>
-                <h2>Imposimple</h2>
-                <p>Gestion simple de impuestos. Herramienta rapida para calculos tributarios.</p>
-                <a href="https://encuaderna.github.io/imposimple/" target="_blank">Abrir Aplicacion</a>
+            <div class="app-card">
+                <div class="app-icon">✅</div>
+                <h2>ImpoSimple</h2>
+                <p>Gestion simple de imposicion. Convierte cualquier PDF en cuadernillo listo para encuadernar.</p>
+                <a href="https://print-masked-flow-pro.base44.app" target="_blank" class="btn">Abrir Aplicacion</a>
             </div>
         </div>
         <footer>
-            <p>Portal de acceso a las aplicaciones de Encuaderna | <a href="https://github.com/encuaderna" target="_blank">GitHub</a></p>
+            <p>Hecho con entusiasmo por <strong>Artesana Dominguera</strong> &mdash; Apps para quienes aman la encuadernacion artesanal</p>
         </footer>
     </div>
 </body>
